@@ -53,7 +53,7 @@ const NoteCard = ({ note }: Props) => {
     }
 
     return (
-        <div className="p-4 border-slate-300 border-2 rounded flex justify-between items-center">
+        <div className="p-4 border-slate-300 border-2 rounded flex justify-between items-center mb-3">
             <div className="flex items-center justify-center gap-2">
                 <StickyNote className="h-4 w-4" />
                 <div>
