@@ -1,4 +1,4 @@
-import { Prop, modelOptions, getModelForClass } from '@typegoose/typegoose';
+import { prop, modelOptions, getModelForClass } from '@typegoose/typegoose';
 
 @modelOptions({
     schemaOptions: {
@@ -7,13 +7,13 @@ import { Prop, modelOptions, getModelForClass } from '@typegoose/typegoose';
 })
 
 export class Note {
-    @Prop({ type: String })
+    @prop({ type: String })
     title: string
 
-    @Prop({ type: String })
+    @prop({ type: String })
     description: string
 
-    @Prop({ type: Boolean, default: false })
+    @prop({ type: Boolean, default: false })
     done: boolean
 }
 

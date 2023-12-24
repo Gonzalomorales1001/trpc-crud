@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 // import * as trpc from '@trpc/server';
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { router, createContext } from './trpc';
+import { router } from './trpc';
 import { notesRouter } from './routes/notes';
 
 const app = express();
@@ -16,8 +16,7 @@ const appRouter = router({
 });
 
 app.use('/trpc', trpcExpress.createExpressMiddleware({
-    router: appRouter,
-    createContext
+    router: appRouter
 }));
 
 export type AppRouter = typeof appRouter;
