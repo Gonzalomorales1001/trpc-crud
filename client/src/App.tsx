@@ -10,7 +10,7 @@ const App = () => {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: `${import.meta.env.VITE_SERVER_URL}`
+          url: `${window.location.origin}/trpc`
         })
       ]
     })
