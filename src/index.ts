@@ -3,4 +3,5 @@ import app from './app';
 import { connectDB } from './database';
 
 connectDB();
-app.listen(2003, () => console.log('server on port 2003'));
+const PORT = process.env.PORT || 2003
+app.listen(PORT, () => console.log(`server on port ${PORT}`));
