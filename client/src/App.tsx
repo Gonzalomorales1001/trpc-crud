@@ -10,7 +10,7 @@ const App = () => {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: `${window.location.origin}/trpc`
+          url: `/trpc`
         })
       ]
     })

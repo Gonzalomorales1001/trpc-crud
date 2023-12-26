@@ -5,6 +5,7 @@ import cors from 'cors';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { router } from './trpc';
 import { notesRouter } from './routes/notes';
+import path from 'path';
 
 const app = express();
 app.use(morgan('dev'));
@@ -18,6 +19,8 @@ const appRouter = router({
 app.use('/trpc', trpcExpress.createExpressMiddleware({
     router: appRouter
 }));
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 export type AppRouter = typeof appRouter;
 
